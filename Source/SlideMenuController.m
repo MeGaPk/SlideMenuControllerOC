@@ -955,8 +955,9 @@ static UIGestureRecognizerState RPSLastState = UIGestureRecognizerStateEnded;
 - (BOOL)isLeftPointContainedWithinBezelRect:(CGPoint)point {
     CGRect leftBezelRect = CGRectZero;
     CGRect tempRect = CGRectZero;
-    CGFloat bezelWidth = CGRectGetWidth(self.view.bounds) - options.leftBezelWidth;
-    CGRectDivide(self.view.bounds, &leftBezelRect, &tempRect, bezelWidth, CGRectMinXEdge);
+//     CGFloat bezelWidth = CGRectGetWidth(self.view.bounds) - options.leftBezelWidth;
+//     CGRectDivide(self.view.bounds, &leftBezelRect, &tempRect, bezelWidth, CGRectMinXEdge);
+    CGRectDivide(self.view.bounds, &leftBezelRect, &tempRect, options.leftBezelWidth/*bezelWidth*/, CGRectMinXEdge);
     return CGRectContainsPoint(leftBezelRect, point);
 }
 
